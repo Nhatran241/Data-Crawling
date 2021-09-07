@@ -3,7 +3,7 @@ from bs4 import BeautifulSoup
 from selenium import webdriver
 
 driver = webdriver.Chrome("chromedriver.exe")
-sitemaps = pd.read_csv('linkpost0.csv')
+sitemaps = pd.read_csv('linkpost3.csv')
 with open('post.csv', 'a') as f:
     for index,sitemap in sitemaps.iterrows():
         url = sitemap['link']
