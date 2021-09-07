@@ -2,8 +2,13 @@ import pandas as pd
 from bs4 import BeautifulSoup
 from selenium import webdriver
 
-driver = webdriver.Chrome("chromedriver.exe")
-sitemaps = pd.read_csv('linkpost3.csv')
+options = webdriver.ChromeOptions()
+options.add_argument("--incognito")
+
+# driver = webdriver.Chrome("chromedriver.exe")
+
+driver = webdriver.Chrome(options=options)
+sitemaps = pd.read_csv('linkpost4.csv')
 with open('post.csv', 'a') as f:
     for index,sitemap in sitemaps.iterrows():
         url = sitemap['link']
